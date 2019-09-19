@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 
 from spider.spider.test import urls
 
-urls.URLS.append('https://movie.douban.com/top250')
+urls.URLS.append('')
 
-cmdline.execute('scrapy crawl accurateSpider'.split())
+cmdline.execute('scrapy crawl myspider'.split())
+# cmdline.execute('scrapy crawl accurateSpider'.split())

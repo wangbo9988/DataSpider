@@ -38,8 +38,8 @@ class MyspiderSpider(scrapy.Spider):
             # 提取ul内容
             datas1 = {}
             doc = py(temp)
-            item = doc('ul li')
-            for li in item:
+            item = doc('div ul li')
+            for li in item.items():
                 datas1['img'] = li.find('img')
                 datas1['url'] = li.find('a').attr('href')
                 datas1['content'] = li.text()
@@ -52,6 +52,8 @@ class MyspiderSpider(scrapy.Spider):
                 datas2['img'] = li.find('img')
                 datas2['url'] = li.find('a').attr('href')
                 datas2['content'] = li.text()
+                print(li.text().replace('',''))
+                print('——' * 80)
 
             # 提取自定义列表内容
             datas3 = {}

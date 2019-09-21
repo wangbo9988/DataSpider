@@ -16,9 +16,9 @@ import re
 class MyspiderSpider(scrapy.Spider):
     name = 'myspider'
     start_urls = [
-        'https://cn.bing.com/search?q=BeautifulSoup&qs=n&form=QBRE&sp=-1&pq=beautifulsoup&sc=8-13&sk=&cvid=0CA66B777B904FCD9C5DA73671C8F45F']
+        'https://www.wmzy.com/api/rank/schList?rankingType=xingchou']
 
-    url = "www.bing.com"
+    url = "www.wmzy.com"
 
     data = {}
 
@@ -52,7 +52,7 @@ class MyspiderSpider(scrapy.Spider):
                 datas2['img'] = li.find('img')
                 datas2['url'] = li.find('a').attr('href')
                 datas2['content'] = li.text()
-                print(li.text().replace('',''))
+                print(li.text())
                 print('——' * 80)
 
             # 提取自定义列表内容

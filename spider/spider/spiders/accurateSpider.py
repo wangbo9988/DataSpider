@@ -20,16 +20,15 @@ class AccurateSpider(scrapy.Spider):
 
     def start_requests(self):
         urls = [
-            'https://github.com/search?p=2&q=universal+crawler&type=Repositories',
+            'https://www.wmzy.com/api/rank/schList?rankingType=xingchou',
         ]
         for i in urls:
             yield scrapy.Request(url=i, method='POST', callback=self.parse_post)
 
     # 页面解析
     def parse_post(self, response):
-        data_list = response.xpath("//table//tr[contains(@style,'mso-height-source')]").extract()
-
+        data_list = response.xpath("//*[@id='tbody]/tr").extract()
+        print(data_list)
         for i_item in data_list:
             soup = BeautifulSoup(i_item, 'html5lib')
             print(soup.text)
-

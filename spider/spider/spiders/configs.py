@@ -1,3 +1,3 @@
-URLS = ['https://www.wmzy.com/api/rank/schList?rankingType=xingchou']
+URLS = ['http://www.cbooo.cn/paipian']
 
-DOMAIN_NAME = 'www.wmzy.com'
+DOMAIN_NAME = 'www.cbooo.cn'
